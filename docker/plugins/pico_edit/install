@@ -1,0 +1,13 @@
+#!/bin/sh
+
+mkdir -p plugins/pico_edit
+
+git clone https://github.com/blocknotes/pico_edit.git plugins/pico_edit
+
+cd plugins/pico_edit
+rm -rf .git/
+
+#Setting Password
+sed -i "s/''/'5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8'/g" config.php
+
+chown -R www-data:www-data ../../plugins/pico_edit
